@@ -147,3 +147,18 @@ dmypy.json
 cython_debug/
 
 # End of https://www.toptal.com/developers/gitignore/api/flask
+
+# Terraform
+.credentials/
+.terraform/
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+*.tfvars
+!settings.auto.tfvars
+.idea/
+*.tfstate
+*.zip
