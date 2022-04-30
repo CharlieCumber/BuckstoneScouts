@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block title %}Volunteer | Buckstone Scout Group{% endblock %}
+
+{% block hero %}
+    <div class="hero hero--volunteer mb-4">
+        <div class="hero-content-container">
+            <div class="col-md-6 hero-content">
+                <h1>
+                    Start Your Adventure!
+                </h1>
+                <p class="lead">
+                    ​Getting involved with Scouts is a decision you'll never forget and one you'll never regret.
+                </p>
+                <p class="lead mb-4">
+                    ​Our adult volunteers get just as much out of Scouting as our young people do.
+                </p>
+                <a class="btn btn-primary btn-lg btn-block" target="_blank" href="{{ volunteer_form }}">Get in touch</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="mb-5">
+    <h2>Prepare to Volunteer</h2>
+    <p>
+        As well as helping young people to enjoy the adventure of Scouting, you’ll also have fun, make friends, develop new skills and have unforgettable experiences.
+    </p>
+    <p>
+        We can also help you develop your current skills and learn new ones.
+        Volunteering in Scouting can enhance your CV or simply allow you to pursue your interest in a specific hobby.
+    </p>
+</div>
+<div class="my-5">
+    <h2>What role could I do?</h2>
+    <p>
+        We have a wide range of volunteer roles - from casual helpers to leaders, trainers, trustees and more – we have a role for everyone.
+        We also offer flexible volunteering roles too, so we can fit around you and the time that you want to give to Scouting.
+    </p>
+</div>
+<div class="my-5">
+    <h2>Do I have the right skills?</h2>
+    <p>
+        You don't need to have previous experience in Scouting, just energy and enthusiasm.
+        We can match your existing skills with the right role and help you to develop new skills.
+    </p>
+</div>
+<div class="my-5">
+    <h2>Quality Training</h2>
+    <p>
+        All of our adult volunteers receive a full induction and ongoing training and support.
+        Our training has been recognised with a National Training Award by UK Skills and over 90% of our volunteers believe that the skills and experiences they have gained through Scouting have been of relevance to their working or personal lives.
+    </p>
+</div>
+
+<a class="btn btn-primary btn-lg btn-block" target="_blank" href="{{ volunteer_form }}">Get in touch</a>
+{% endblock content %}
+{% block footer %}{% endblock footer %}

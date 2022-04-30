@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block title %}Scouts | Buckstone Scout Group{% endblock %}
+
+{% block hero %}
+<div class="hero hero--scouts mb-4">
+    <div class="hero-content-container">
+            <div class="col-md-6 offset-md-6 hero-content">
+                <h1>
+                    Scouts
+                </h1>
+                <h2 class="lead" style="font-weight:bold;">Ages 10½ - 14</h2>
+                <h2 class="lead mb-4" style="font-weight:bold;">Friday 19:30 - 21:00</h2>
+                <p class="lead mb-4">
+                    Scouts are a go-getting group of young people who master new skills, make new friends, have fun and go on adventures.
+                </p>
+                <p>
+                    We are outside camping in all weathers and seasons with the Scouts cooking their meals over open fires.
+                    When we are inside we are developing skills such as navigation to use when we venture out.
+                </p>
+                <a class="btn btn-primary btn-lg btn-block" target="_blank" href="{{ join_link }}">Join us</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-9">
+            <div class="my-4">
+                <h3>Badges and Awards</h3>
+                <p>
+                    The Scouts work towards various activity and challenge badges, which contribute to their Chief Scout Gold Award.
+                    There are badges for a huge range of activities including snow sports, archery, athletics, creativity, cooking and even computer coding!
+                </p>
+                <a href="https://www.scouts.org.uk/scouts/awards/">More information on awards</a>
+            </div>
+            <hr>
+            <div class="my-4">
+                <h3>Uniform</h3>
+                <p>
+                    Once your child has been to a few meetings and has learned about Scouts, they will be invested into the Troop.
+                    This is when they will need their own teal green Scout Shirt which can be bought online from the Scout Store.
+                    During the investiture ceremony your child will be presented with their green necker (scarf) and the core badges.
+                    The badges should be placed as per the diagram above.
+                </p>
+                <a href="https://shop.scouts.org.uk/uniforms/scouts#filters.type_filter=Blouses,Shirts&amp;filters.section=Scouts" target="_blank">Buy online from The Scout Store</a>
+                {{ image_card(url_for("static", filename="images/scout-badges.jpg")) }}
+            </div>
+            <hr>
+            <div class="my-4">
+                <h3>Promise, Law and Motto</h3>
+                <p>Scouting is a values based organisation open to people of all religions, and those of no religion. The UK Association have published a handy guide to help you understand the purpose of the Scout Promise, Law and Motto:</p>
+                <a class="btn btn-lg btn-outline-dark" href="{{ url_for('static', filename='files/scout_promise_explained.pdf') }}" download>Promise Explained</a>
+            </div>
+        </div>
+    </div>
+    {% endblock content %}
+    {% block fullWidthSection %}
+    <img style="width:100vw" src="{{ url_for("static", filename="images/scouts-to-explorers.jpg") }}" />
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="my-4">
+                    <h3 class="my-4" id="smesu">Moving up to Explorers</h3>
+                    <p>
+                        At the age of 14, our Scouts move onto our partner Explorer Scout Unit, SMESU (South Morningside Explorer Scout Unit).
+                        The Explorer Scout Unit takes former Scouts aged 14 to 18 from our Scout group and from the nearby Fairmilehead (114th) Scout Group.
+                        Traditionally, our Scouts move up to Explorers in the August nearest their 14th birthday.
+                    </p>
+                    <p>
+                        SMESU is an active unit with a busy programme of activities and camps, usually meeting on Monday evenings, 19:30 - 21:00 at Fairmilehead Church.
+                    </p>
+                    <p>
+                        In the run up to your last night at Scouts, your Scout leader will talk to your new Explorer leader – who you may have already met during joint activities.
+                        Together, they’ll make the move as easy as possible for you.
+                    </p>
+                    <p>
+                        Contact the SMESU leaders directly: <a href="mailto:smesumail@gmail.com">smesumail@gmail.com</a>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock fullWidthSection %}
+    

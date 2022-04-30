@@ -1,3 +1,18 @@
+{%- from 'components/image_card.html' import image_card %}
+{%- from 'components/section_card.html' import section_card %}
+
+{% macro headerItem(text, endpoint) -%}
+  {% if endpoint == request.url_rule.endpoint %}
+  <li class="nav-item active">
+    <a class="nav-link" href="{{ url_for(endpoint) }}">{{ text }}<span class="sr-only" aria-current="page">(current)</span></a>
+  </li>
+  {% else %}
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for(endpoint) }}">{{ text }}</a>
+  </li>
+  {% endif %}
+{%- endmacro %}
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,19 +28,87 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,700;0,800;0,900;1,300;1,400;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-    <title>{% block title %}Buckstone Scount Group{% endblock %}</title>
+    <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}"/>
+
+    <title>{% block title %}Buckstone Scout Group{% endblock %}</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- production:   G-JFKDQW6DGL -->
+    <!-- test:         G-BYG2MML2ND -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYG2MML2ND"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-BYG2MML2ND');
+    </script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-      <a class="navbar-brand" href="/">Buckstone Scount Group</a>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+      <a class="navbar-brand" href="{{ url_for('home') }}">
+        <img id="header-logo" src="{{ url_for('static', filename='images/logo.png') }}" height="120" class="d-inline-block align-top" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          {{ headerItem("Home", "home") }}
+          {{ headerItem("Beavers", "beavers") }}
+          {{ headerItem("Cubs", "cubs") }}
+          {{ headerItem("Scouts", "scouts") }}
+          {{ headerItem("Volunteer", "volunteer") }}
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" href="{{ join_link }}">Join</a>
+          </li>
+        </ul>
+      </div>
     </nav>
-
+    <div>
+      {% block hero %}{% endblock %}
+    </div>
     <div class="container body-content">
       {% block content %}{% endblock %}
     </div>
+    {% block fullWidthSection %}{% endblock %}
+    <div class="map-background-section my-4">
+      <div class="container body-content">
+        {% block map_background_section %}{% endblock %}
+      </div>
+    </div>
+    <div class="container body-content">
+      {% block bottom_content %}{% endblock %}
+    </div>
+    {% block footer %}
+    <div class="footer">
+      <div class="footer-content-container">
+        <div class="footer-content col-md-4">
+          <a class="btn btn-primary btn-lg" target="_blank" href="{{ join_link }}">Join us</a>
+          <a class="btn btn-outline-dark btn-lg" href="{{ url_for("contact") }}">Contact us</a>
+          <a href="https://www.onlinescoutmanager.co.uk/login.php" class="btn btn-outline-dark btn-lg">OSM</a>
+          <a href="https://www.facebook.com/BuckstoneScouts" class="btn btn-outline-dark btn-lg">Facebook</a>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        ©{{ now.year }} by Buckstone Scout Group, a Scottish registered charity no. <a href="https://www.oscr.org.uk/about-charities/search-the-register/charity-details?number=6761">SC006761</a>
+      </div>
+    </div>
+    {% endblock %}
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+          document.getElementById("header-logo").height = "80";
+        } else {
+          document.getElementById("header-logo").height = "120";
+        }
+      }
+    </script>
   </body>
 </html>

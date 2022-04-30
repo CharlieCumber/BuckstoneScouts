@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block title %}Beavers | Buckstone Scout Group{% endblock %}
+
+{% block hero %}
+    <div class="hero hero--beavers mb-4">
+        <div class="hero-content-container">
+            <div class="col-md-6 offset-md-6 hero-content">
+                <h1>
+                    Beavers
+                </h1>
+                <h2 class="lead" style="font-weight:bold;">Ages 6 &amp; 7</h2>
+                <h2 class="lead mb-4" style="font-weight:bold;">Wednesday 18:15 - 19:15</h2>
+                <p class="lead">
+                    Each week our Beavers hop, skip and jump their way through lots of different games and activities –
+                    achieving anything they set their minds to, and having lots of fun along the way.
+                </p>
+                <p class="lead mb-4">
+                    Once your child is aged 4, you are able to sign up to our waiting list by completing the join form.
+                </p>
+                <a class="btn btn-primary btn-lg btn-block" target="_blank" href="{{ join_link }}">Join us</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-9">
+            <div class="my-4">
+                <h3>Badges and Awards</h3>
+                <p>
+                    The Beavers work towards various activity and challenge badges, which contribute to their Chief Scout Bronze Award.
+                    There are badges for a huge range of activities including snow sports, archery, athletics, creativity, cooking and even computer coding!
+                </p>
+                <a href="https://www.scouts.org.uk/beavers/awards/">More information on awards</a>
+            </div>
+            <hr>
+            <div class="my-4">
+                <h3>Uniform</h3>
+                <p>
+                    Once your child has been to a few meetings and has learned about Beavers, they will be invested into the Colony.
+                    This is when they will need their own blue Beavers jumper which can be bought online from the Scout Store.
+                    During the investiture ceremony your child will be presented with their green necker (scarf) and the core badges.
+                    The badges should be placed as per the diagram above.
+                </p>
+                <a href="https://shop.scouts.org.uk/uniforms/beavers/beaver-scouts-uniform-sweatshirt" target="_blank">Buy online from The Scout Store</a>
+                {{ image_card(url_for("static", filename="images/beaver-badges.jpg")) }}
+            </div>
+            <hr>
+            <div class="my-4">
+                <h3>Promise, Law and Motto</h3>
+                <p>Scouting is a values based organisation open to people of all religions, and those of no religion. The UK Association have published a handy guide to help you understand the purpose of the Beaver Scout Promise, Law and Motto:</p>
+                <a class="btn btn-lg btn-outline-dark" href="{{ url_for('static', filename='files/beaver_promise_explained.pdf') }}" download>Promise Explained</a>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+{% block fullWidthSection %}
+    <img style="width:100vw" src="{{ url_for("static", filename="images/beavers-to-cubs.jpg") }}" />
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="my-4">
+                    <h3 class="my-4">Moving up to Cubs</h3>
+                    <p>
+                        Between the ages of 7½ and 8½, it's usually time for Beavers to move up to Cubs which meets on Fridays 18:15 - 19:30. 
+                    </p>
+                    <p>
+                        Moving on to Cubs is a really exciting time, but you might also feel a little sad about saying farewell to some of your fellow Beavers.
+                        This is an understandable reaction to change and it’s okay to feel nervous and unsure.
+                    </p>
+                    <p>
+                        In the run up to your last night at Beavers, your Beaver leader will talk to your new Cub leader – who you may have already met during joint activities.
+                        Together, they’ll make the move as easy as possible for you.
+                    </p>
+                    <p>
+                        Although most Beavers move up to Cubs between the ages of 7 ½ and 8 ½, leaders can be flexible in cases where a Beaver may need a bit more time due to additional needs or exceptional circumstances.
+                        Generally, they'll also have a think about when your friends are moving, and time things so that you can start your new adventure together where possible.
+                    </p>
+                    <a href="{{ url_for("cubs") }}">Find out more about Cubs</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock fullWidthSection %}

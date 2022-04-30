@@ -1,0 +1,18 @@
+{% macro section_card(title, ages, day, class, link) %}
+    <div class="section-card {{class}}">
+        <div>
+            <h2>{{title}}</h2>
+            <span>{{ages}}</span><br>
+            <span>{{day}}</span>
+        </div>
+        <a href="{{link}}">
+            <span>
+                <span>
+                    <span data-attr-span="Find out more!">
+                        Find out more!
+                    </span>
+                </span>
+            </span>
+        </a>
+    </div>
+{% endmacro %}

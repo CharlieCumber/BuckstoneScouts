@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block title %}Cubs | Buckstone Scout Group{% endblock %}
+
+{% block hero %}
+    <div class="hero hero--cubs mb-4">
+        <div class="hero-content-container">
+            <div class="col-md-6 hero-content">
+                <h1>
+                    Cubs
+                </h1>
+                <h2 class="lead" style="font-weight:bold;">Ages 8 - 10½</h2>
+                <h2 class="lead mb-4" style="font-weight:bold;">Friday 18:15 - 19:30</h2>
+                <p class="lead">
+                    Develop new skills. Soar to great heights. Being a Cub opens up a whole other world.
+                </p>
+                <p class="lead mb-4">
+                    When you join Cubs, you’ll be introduced to lots of new activities, people and things.
+                    Being a Cub is all about growing and learning in small but mighty ways.
+                </p>
+                <a class="btn btn-primary btn-lg btn-block" target="_blank" href="{{ join_link }}">Join us</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-9">
+            <div class="my-4">
+                <h3>Badges and Awards</h3>
+                <p>
+                    The Cubs work towards various activity and challenge badges, which contribute to their Chief Scout Silver Award.
+                    There are badges for a huge range of activities including snow sports, archery, athletics, creativity, cooking and even computer coding!
+                </p>
+                <a href="https://www.scouts.org.uk/cubs/awards/">More information on awards</a>
+            </div>
+            <hr>
+            <div class="my-4">
+                <h3>Uniform</h3>
+                <p>
+                    Once your child has been to a few meetings and has learned about Cubs, they will be invested into the Pack.
+                    This is when they will need their own green Cubs jumper which can be bought online from the Scout Store.
+                    During the investiture ceremony your child will be presented with their green necker (scarf) and the core badges.
+                    The badges should be placed as per the diagram above.
+                </p>
+                <a href="https://shop.scouts.org.uk/uniforms/cubs/cub-scouts-uniform-sweatshirt-9081" target="_blank">Buy online from The Scout Store</a>
+                {{ image_card(url_for("static", filename="images/cub-badges.jpg")) }}
+            </div>
+            <hr>
+            <div class="my-4">
+                <h3>Promise, Law and Motto</h3>
+                <p>Scouting is a values based organisation open to people of all religions, and those of no religion. The UK Association have published a handy guide to help you understand the purpose of the Cub Scout Promise, Law and Motto:</p>
+                <a class="btn btn-lg btn-outline-dark" href="{{ url_for('static', filename='files/cub_promise_explained.pdf') }}" download>Promise Explained</a>
+            </div>
+        </div>
+    </div>
+    {% endblock content %}
+    {% block fullWidthSection %}
+    <img style="width:100vw" src="{{ url_for("static", filename="images/cubs-to-scouts.jpg") }}" />
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="my-4">
+                    <h3 class="my-4">Moving up to Scouts</h3>
+                    <p>
+                        Between the ages of 10 and 11, it's usually time for Cubs to move up to Scouts which meets on Fridays 19:30 - 21:00. 
+                    </p>
+                    <p>
+                        Moving on to Scouts is a really exciting time, but you might also feel a little sad about saying farewell to some of your fellow Cubs.
+                        This is an understandable reaction to change and it’s okay to feel nervous and unsure.
+                    </p>
+                    <p>
+                        In the run up to your last night at Cubs, your Cub leader will talk to your new Scout leader – who you may have already met during joint activities.
+                        Together, they’ll make the move as easy as possible for you.
+                    </p>
+                    <p>
+                        Although most Cubs move up to Scouts between the ages of 10 and 11, leaders can be flexible in cases where a Cub may need a bit more time due to additional needs or exceptional circumstances.
+                        Generally, they'll also have a think about when your friends are moving, and time things so that you can start your new adventure together where possible.
+                    </p>
+                    <a href="{{ url_for("scouts") }}">Find out more about Scouts</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock fullWidthSection %}
+    

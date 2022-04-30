@@ -1,7 +1,75 @@
 {% extends "layout.html" %}
 
+{% block hero %}
+    <div class="hero mb-4">
+        <div class="hero-content-container">
+            <div class="col-md-6 hero-content">
+                <h1 class="mb-4">
+                    Skills for Life
+                </h1>
+                <p class="lead">
+                    What you’ll learn in Scouts will stay with you forever.
+                    Scouting gives young people opportunities to find their independence and develop the social, leadership and team work skills that help build a positive future.
+                </p>
+                <p class="lead mb-4">
+                    Scouts have fun, make friends and develop skills that prepare you for life.
+                    Getting involved with Scouts is a decision you’ll never forget, and one you will not regret.
+                </p>
+                <a class="btn btn-primary btn-lg btn-block" target="_blank" href="{{ join_link }}">Join today</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block content %}
-
-Hello world!
-
+    <div class="row align-items-center my-3">
+        <div class="col-md-6">
+            <h2>Our Scout Group</h2>
+            <p>
+                We provide a progressive and exciting programme, allowing your child to learn by doing and developing children physically, intellectually and socially.
+                We offer development through the adventure, that helps children to grow in confidence and develop into active citizens.
+            </p>
+            <p>We usually meet at St Fillan's Church on Buckstone Drive, when we are not enjoying activities in our local woodlands and parks.</p>
+            <p>In scouty terms, we are referred to as the 60th Braid Scout Group, a member of South East Scotland Region. We are members of the UK Scout Association.            </p>
+        </div>
+        <div class="col-md-6 map-column">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2236.297654643583!2d-3.2106242483421146!3d55.909539080500416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4887c7396786c5c7%3A0xf64e94904f6456a3!2sBuckstone%20Scout%20Group!5e0!3m2!1sen!2suk!4v1632688444598!5m2!1sen!2suk" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+    <div class="section-card-wrapper">
+        {{ section_card(title="Beavers", ages="Ages 6 - 7", day="Wednesday 18:15 - 19:15", class="beavers", link=url_for('beavers')) }}
+        {{ section_card(title="Cubs", ages="Ages 8 - 10.5", day="Friday 18:15 - 19:30", class="cubs", link=url_for('cubs')) }}
+        {{ section_card(title="Scouts", ages="Ages 10.5 - 14", day="Friday 19:30 - 21:00", class="scouts", link=url_for('scouts')) }}
+        {{ section_card(title="Explorers", ages="Ages 14 - 18", day="Monday 19:30 - 21:00", class="explorers", link=url_for('scouts', _anchor="smesu")) }}
+    </div>
 {% endblock content %}
+
+{% block map_background_section %}
+    <div class="row mt-4">
+        <div class="col-md-9">
+            <div class="my-4">
+                <h3>Activities</h3>
+                <span>We offer a huge variety of activities appropriate to each age group, including watersports, rock climbing, camping, days out, cooking, nature activities and much more...</span>
+            </div>
+            <hr>
+            <div class="my-4">
+                <h3>Fun and Friendship</h3>
+                <span>Teamwork is at the heart of everything we do, and by facing new experiences as part of a team you’ll make friends for life. Whatever your background, you’ll be made to feel welcome in Scouts and supported to be the very best you can be.</span>
+            </div>
+            <hr>
+            <div class="my-4">
+                <h3>Challenge by Choice</h3>
+                <span>We believe that successful learners make confident individuals.  We challenge our members to set realistic and measurable goals to achieve their full physical, intellectual, social, and spiritual potential. Be that hiking challenging hills, camping independently, or pushing themselves to climb higher on a climbing wall.</span>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block bottom_content %}
+    <div class="my-4">
+        <div style="padding:56.25% 0 0 0;position:relative;">
+            <iframe src="https://player.vimeo.com/video/655667529?h=b74a9dda2d&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Join the Adventure!"></iframe>
+        </div>
+        <script src="https://player.vimeo.com/api/player.js"></script>
+    </div>
+{% endblock %}

@@ -1,11 +1,451 @@
-:root {
-  font-family: 'Nunito Sans', sans-serif !important;
-  --scout-purple: #7413dc;
-  --scout-teal: #00a794;
-  --scout-red: #e22e12;
-  --scout-pink: #ffb4e5;
-  --scout-green: #23a950;
-  --scout-navy: #003982;
-  --scout-blue: #006ddf;
-  --scout-yellow-not: #ffe627;
+/* TODO: Dark theme
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #eee;
+    background: #121212!important;
+  }
+
+  body a {
+    color: #809fff;
+  }
+}
+
+*/
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 170px;
+}
+
+.navbar-nav {
+  font-size: 1.5rem;
+}
+
+.navbar-brand img {
+  padding: 0.5rem;
+  transition: 0.2s;
+}
+
+.hero {
+  margin-top: -64px;
+  width: 100%;
+  background-image: url("/static/images/scouts-climbing.jpg");
+  background-size: cover;
+  background-position: center
+}
+
+.hero.hero--beavers {
+  background-image: url("/static/images/beavers-science.jpg");
+}
+
+.hero.hero--cubs {
+  background-image: url("/static/images/cubs-carousel.jpg");
+}
+
+.hero.hero--scouts {
+  background-image: url("/static/images/scouts-on-beach.jpg");
+}
+
+.hero.hero--volunteer {
+  background-image: url("/static/images/scout-in-tunnel.jpg");
+}
+
+.footer {
+  background-image: url("/static/images/cubs-running-cropped.jpg");
+  background-size: cover;
+  background-position: center;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero .hero-content-container,
+.footer .footer-content-container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 80px;
+  padding-bottom: 40px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.footer .footer-content-container {
+  padding-bottom: 20px;
+}
+
+@media (min-width: 576px) {
+  .hero-content-container,
+  .footer-content-container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-content-container,
+  .footer-content-container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero-content-container,
+  .footer-content-container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-content-container,
+  .footer-content-container {
+    max-width: 1140px;
+  }
+}
+
+.hero .hero-content {
+  background-color: rgba(255,255,255,0.75);
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-radius: 5px;
+  padding: 40px;
+}
+
+.footer .footer-content {
+  background-color: rgba(255,255,255,0.75);
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.footer .footer-content a {
+  margin: 10px;
+}
+
+.footer-copyright {
+  text-align: center;
+  margin-top: auto;
+  text-shadow: 2px 2px white;
+  line-height: 50px;
+}
+
+@media (min-width: 768px) {
+  .map-column {
+    padding-left: 5px!important;
+  }
+}
+
+.section-card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-card {
+  padding: 21px;
+  width: 100%;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-card.beavers {
+  background-color: #006ddf;
+}
+
+.section-card.cubs {
+  background-color: #23a950;
+}
+
+.section-card.scouts {
+  background-color: #004851;
+}
+
+.section-card.explorers {
+  background-color: #003982;
+}
+
+
+  .section-card a {
+    width: 100%;
+    margin-top: 30px;
+    line-height: 50px;
+    color: white;
+    padding: 2px 6px 2px 6px;
+    border: 1px solid white;
+    text-decoration: none;
+  }
+
+  .section-card.beavers a:hover {
+    background-color: white;
+    color: #006ddf;
+    text-decoration: none;
+  }
+
+  .section-card.cubs a:hover {
+    background-color: white;
+    color: #23a950;
+    text-decoration: none;
+  }
+
+  .section-card.scouts a:hover {
+    background-color: white;
+    color: #004851;
+    text-decoration: none;
+  }
+
+  .section-card.explorers a:hover {
+    background-color: white;
+    color: #003982;
+    text-decoration: none;
+  }
+
+
+@media (hover: hover) and (min-width: 576px) {
+  .section-card:after {
+    position: absolute;
+    top:0;
+    left: 0;
+    right:0;
+    bottom: 0;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a29ca9+0,95909b+99 */
+    background: #a29ca9; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #a29ca9 0%, #95909b 99%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #a29ca9 0%,#95909b 99%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #a29ca9 0%,#95909b 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a29ca9', endColorstr='#95909b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    content: '';
+    opacity: 0;
+    transition: opacity 0.9s ease 0s;
+    -webkit-transition: opacity 0.9s ease 0s;
+  }
+
+  .section-card:hover:after {
+    opacity: 0.4;
+  }
+
+  .section-card div {
+    transition: all 0.15s ease 0s;
+    -webkit-transition: all 0.15s ease 0s;
+    position: relative;
+    z-index: 10;
+  }
+
+  .section-card:hover div {
+    transform: translateY(-30px);
+  }
+
+  .section-card a {
+    position: absolute;
+    transform: translatey(100px);
+    -webkit-appearance: none;
+    border: none;
+    background: none;
+    color:white;
+    width: calc(100% - 20px);
+    height:50px;
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    outline: none;
+    z-index: 10;
+  }
+
+  .section-card a span {
+    display: block;
+    position: relative;
+    line-height: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+
+  .section-card a > span:after {
+    content:'';
+    position: absolute;
+    top:0;
+    left: 50%;
+    width: 20px;
+    height: 0;
+    border: 1px solid white;
+    border-left: none;
+    border-bottom: none;
+    transition: height 0.15s ease-out, width 0.15s ease-out 0.15s;
+  }
+
+  .section-card:hover a > span:after {
+    width: calc(50% - 1px);
+    height: calc(100% - 2px);
+    transition: width 0.15s ease-out, height 0.15s ease-out 0.15s;
+  }
+
+  .section-card a > span:before {
+    content:'';
+    position: absolute;
+    top:0;
+    right: 50%;
+    width: 20px;
+    height: 0;
+    border: 1px solid white;
+    border-right: none;
+    border-bottom: none;
+    transition: height 0.15s ease-out, width 0.15s ease-out 0.15s;
+  }
+
+  .section-card:hover a > span:before {
+    width: calc(50% - 1px);
+    height: calc(100% - 2px);
+    transition: width 0.15s ease-out, height 0.15s ease-out 0.15s;
+  }
+
+  .section-card a > span > span:before {
+    content:'';
+    position: absolute;
+    bottom:0;
+    right: 0%;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+
+  .section-card:hover a > span > span:before {
+    opacity: 1;
+    border-bottom: 1px solid white;
+    width: calc(50%);
+    height: 1px;
+    transition: opacity 0s ease-out 0.29s, width 0.15s ease-out 0.3s;
+  }
+
+  .section-card a > span > span:after {
+    content:'';
+    position: absolute;
+    bottom:0;
+    left: 0%;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+
+  .section-card:hover a > span > span:after {
+    opacity: 1;
+    border-bottom: 1px solid white;
+    width: calc(50%);
+    height: 1px;
+    transition: opacity 0s ease-out 0.29s, width 0.15s ease-out 0.3s;
+  }
+
+  .section-card a > span > span > span {
+    transition: color 0.15s ease-out 0.3s;
+    color: transparent;
+  }
+
+  .section-card:hover a > span > span > span {
+    color:white;
+  }
+
+  .section-card a > span > span > span:after {
+    position: absolute;
+    top:0;left:0;right:0;bottom:0;
+    color:#1f2e4d;
+    content: attr(data-attr-span);
+    width: 0%;
+    height: 100%;
+    background:white;
+    white-space: nowrap;
+    text-align: center;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    transition: width 0.2s;
+  }
+
+  .section-card a:hover > span > span > span:after {
+    width: 100%;
+  }
+}
+
+@media (min-width: 576px) {
+  .section-card {
+    width: 250px;
+    height: 250px;
+  }
+
+  .section-card a {
+    transform: translateY(90px);
+  }
+}
+
+@media (min-width: 768px) {
+  .section-card {
+    width: 340px;
+    height: 340px;
+  }
+
+  .section-card a {
+    transform: translateY(135px);
+  }
+}
+
+@media (min-width: 992px) {
+  .section-card {
+    width: 225px;
+    height: 225px;
+  }
+
+  .section-card a {
+    transform: translateY(75px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .section-card {
+    width: 270px;
+    height: 270px;
+  }
+
+  .section-card a {
+    transform: translateY(97px);
+  }
+}
+
+.card-row {
+  display: flex;
+  align-items: center;
+}
+
+.card-row div {
+  flex-grow: 1;
+  width: 50%;
+}
+
+.content-card {
+  padding: 20px;
+}
+
+.image-card img {
+  max-width: 100%;
+}
+
+.map-background-section {
+  width: 100%;
+  background-image: url("/static/images/map.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contact-table th,
+.contact-table td {
+  padding: 10px 30px 10px 0;
 }

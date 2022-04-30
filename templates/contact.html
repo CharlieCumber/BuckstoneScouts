@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}Contact | Buckstone Scout Group{% endblock %}
+
+{% block content %}
+<h1>Contact the Group</h1>
+<p class="lead">We are always interested in new opportunities, partnerships or new <a href="{{ url_for('volunteer') }}">volunteers</a>.</p>
+<p>If you are interested in joining one of our sections as a youth member then please proceed to the <a target="_blank" href="{{ join_link }}">join form</a>.</p>
+<table class="contact-table mt-5">
+    <tr>
+        <th>General Enquiries</th>
+        <td>
+            <a href="mailto:buckstonescoutgroup@gmail.com">BuckstoneScoutGroup@gmail.com</a>
+        </td>
+    </tr>
+    <tr>
+        <th>Beaver Colony</th>
+        <td>
+            <a href="mailto:buckstonebeavers@gmail.com">BuckstoneBeavers@gmail.com</a>
+        </td>
+    </tr>
+    <tr>
+        <th>Cub Pack</th>
+        <td>
+            <a href="mailto:buckstonecubs@gmail.com">BuckstoneCubs@gmail.com</a>
+        </td>
+    </tr>
+    <tr>
+        <th>Scout Troop</th>
+        <td>
+            <a href="mailto:buckstonescouts@gmail.com">BuckstoneScouts@gmail.com</a>
+        </td>
+    </tr>
+    <tr>
+        <th>Waiting List</th>
+        <td>
+            <a href="mailto:buckstonewaitinglist@gmail.com">BuckstoneWaitingList@gmail.com</a>
+        </td>
+    </tr>
+</table>
+
+{% endblock content %}
+{% block footer %}{% endblock footer %}
